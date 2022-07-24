@@ -46,6 +46,11 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs"
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+  use 'kyazdani42/nvim-tree.lua'
+  use  'kyazdani42/nvim-web-devicons'
+
 
   --use '9mm/vim-closer'
    -- Lazy loading:
@@ -74,8 +79,10 @@ return packer.startup(function(use)
 
  -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
+  -- use "neovim/nvim-lsp" -- tsserver
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
@@ -104,6 +111,19 @@ return packer.startup(function(use)
 
   -- git
   use "lewis6991/gitsigns.nvim"
+
+  -- tree
+  -- use {
+  --   'kyazdani42/nvim-tree.lua',
+  --   requires = {
+  --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  --   },
+  --   tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  -- }
+
+  -- file navigator
+  use 'ThePrimeagen/harpoon'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

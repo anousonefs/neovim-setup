@@ -75,5 +75,11 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
 
+-- nvim tree
+keymap("n", "<C-e>", ":NvimTreeFocus<cr>", opts)
+keymap("n", "<C-t>", ":NvimTreeCollapse<cr>", opts)
 
-keymap("n", "<C-/>", "gcc", opts)
+-- buffers
+keymap("n", "<C-w>", ":Bdelete<cr>", opts)
+keymap("i", "<C-w>", ":Bdelete<cr>", opts)
+keymap("n", "<S-p>", ":BufferLineTogglePin<cr>", opts)

@@ -71,9 +71,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 --keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
+-- keymap("n", ";f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", ";f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", ";t", "<cmd>Telescope live_grep<cr>", opts)
 
 -- nvim tree
 keymap("n", "<C-e>", ":NvimTreeFocus<cr>", opts)
@@ -83,3 +83,6 @@ keymap("n", "<C-t>", ":NvimTreeCollapse<cr>", opts)
 keymap("n", "<C-w>", ":Bdelete<cr>", opts)
 keymap("i", "<C-w>", ":Bdelete<cr>", opts)
 keymap("n", "<S-p>", ":BufferLineTogglePin<cr>", opts)
+
+-- formating
+keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting()<cr>", opts)

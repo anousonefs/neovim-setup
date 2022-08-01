@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
-  use 'kyazdani42/nvim-tree.lua'
   use  'kyazdani42/nvim-web-devicons'
 
 
@@ -80,12 +79,15 @@ return packer.startup(function(use)
  -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   -- use "neovim/nvim-lsp" -- tsserver
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use { "williamboman/mason.nvim" }
+  use { "williamboman/mason-lspconfig.nvim" }
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'fannheyward/telescope-coc.nvim'
 
   -- Treesitter
   use {
@@ -112,17 +114,26 @@ return packer.startup(function(use)
   -- git
   use "lewis6991/gitsigns.nvim"
 
-  -- tree
-  -- use {
-  --   'kyazdani42/nvim-tree.lua',
-  --   requires = {
-  --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  --   },
-  --   tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  -- }
+  -- nerdtree
+  -- use "preservim/nerdtree"
+  -- use "Xuyuanp/nerdtree-git-plugin"
+  use 'kyazdani42/nvim-tree.lua'
 
   -- file navigator
   use 'ThePrimeagen/harpoon'
+
+  -- golang
+  -- use 'fatih/vim-go'
+
+  -- tagbar
+  use("preservim/tagbar")
+
+  use {
+      'tamton-aquib/staline.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      event = "BufRead",
+      config = "require('user.staline-config')"
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

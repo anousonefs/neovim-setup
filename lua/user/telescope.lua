@@ -7,11 +7,9 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -45,7 +43,7 @@ telescope.setup {
       },
 
       n = {
-        ["<esc>"] = actions.close,
+        ["q"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
@@ -99,4 +97,7 @@ telescope.setup {
     -- }
     -- please take a look at the readme of the extension you want to configure
   },
+  coc = { theme = 'ivy' }
 }
+require('telescope').load_extension('fzf')
+require('telescope').load_extension('coc')

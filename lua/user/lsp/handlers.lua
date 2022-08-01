@@ -87,10 +87,10 @@ end
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		vim.notify("disable tsserver")
-		client.resolved_capabilities.document_formatting = false
+		client.resolved_capabilities.document_formatting = true
 	end
 	if client.name == "sumneko_lua" then
-		vim.notify("disable sumneko_lua")
+		vim.notify("disable sumneko_lua der")
 		client.resolved_capabilities.document_formatting = false
 	end
 	lsp_keymaps(bufnr)

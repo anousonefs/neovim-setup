@@ -14,8 +14,8 @@ null_ls.setup({
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }), -- format python
 		--formatting.yapf, -- format python
-		formatting.stylua, -- format lua
-		formatting.gofumpt, -- format go
+		-- formatting.stylua, -- format lua
+		-- formatting.gofumpt, -- format go
 		diagnostics.revive, -- validate go
 		diagnostics.flake8, -- validate python
 		diagnostics.eslint, -- validate typescript

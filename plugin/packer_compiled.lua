@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -227,14 +222,6 @@ _G.packer_plugins = {
     path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["staline.nvim"] = {
-    config = { "require('user.staline-config')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/anousone/.local/share/nvim/site/pack/packer/opt/staline.nvim",
-    url = "https://github.com/tamton-aquib/staline.nvim"
-  },
   tagbar = {
     loaded = true,
     path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/tagbar",
@@ -259,11 +246,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/Users/anousone/.local/share/nvim/site/pack/packer/start/vim-bbye",
-    url = "https://github.com/moll/vim-bbye"
   },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
@@ -299,10 +281,6 @@ vim.cmd [[au!]]
 time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'staline.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

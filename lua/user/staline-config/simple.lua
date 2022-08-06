@@ -26,6 +26,19 @@ staline.setup {
     mid = {{'StalineName', 'file_name'}},
     right = {'-lsp', ' ', time, '  ', percentage}
   },
+ --  sections = {
+	-- 	left = {
+	-- 		'▊', ' ', { 'Evil', ' ' }, ' ',         -- The mode and evil sign
+	-- 		'file_size', ' ',                        -- Filesize
+	-- 		{ 'StalineFile', 'file_name' }, ' '       -- Filename in different highlight
+	-- 	},
+	-- 	mid = { ' ', 'lsp_name' },                      -- "lsp_name" is still a little buggy
+	-- 	right = {
+	-- 		{ 'StalineEnc', vim.bo.fileencoding:upper() }, '  ',  -- Example for custom section
+	-- 		{ 'StalineEnc', 'cool_symbol' }, ' ',                 -- the cool_symbol for your OS
+	-- 		{ 'StalineGit', 'branch' }, ' ', '▊'                  -- Branch Name in different highlight
+	-- 	}
+	-- },
   defaults = {
     true_colors = true, -- LSP highlighing
     font_active = "none",

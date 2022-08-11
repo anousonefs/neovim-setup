@@ -18,10 +18,16 @@ keymap('n', ';s', ':split<Return><C-w>w', opts)
 keymap('n', ';v', ':vsplit<Return><C-w>w', opts)
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
+
+keymap("n", ";h", "<C-w>h", opts)
+keymap("n", ";j", "<C-w>j", opts)
+keymap("n", ";k", "<C-w>k", opts)
+keymap("n", ";l", "<C-w>l", opts)
+
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize +2<CR>", opts)
@@ -30,8 +36,8 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- original buffers
-keymap("n", ";l", ":bnext<CR>", opts)
-keymap("n", ";h", ":bprevious<CR>", opts)
+keymap("n", "<C-l>", ":bnext<CR>", opts)
+keymap("n", "<C-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-w>", ":bdelete<cr>", opts)
 keymap("i", "<C-w>", ":bdelete<cr>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)

@@ -9,14 +9,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
-
--- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w')
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
-
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -30,8 +22,8 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- original buffers
-keymap("n", "sl", ":bnext<CR>", opts)
-keymap("n", "sh", ":bprevious<CR>", opts)
+keymap("n", ";l", ":bnext<CR>", opts)
+keymap("n", ";h", ":bprevious<CR>", opts)
 keymap("n", "<C-w>", ":bdelete<cr>", opts)
 keymap("i", "<C-w>", ":bdelete<cr>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)

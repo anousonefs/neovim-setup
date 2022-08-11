@@ -9,6 +9,14 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Increment/decrement
+keymap('n', '+', '<C-a>', term_opts)
+keymap('n', '-', '<C-x>', term_opts)
+
+-- Split window
+keymap('n', ';s', ':split<Return><C-w>w', opts)
+keymap('n', ';v', ':vsplit<Return><C-w>w', opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

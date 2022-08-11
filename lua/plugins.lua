@@ -124,16 +124,18 @@ return packer.startup(function(use)
   -- harpoon for navigation
   use 'ThePrimeagen/harpoon'
 
+  use 'nvim-lualine/lualine.nvim' -- Statusline
+
   -- buffer
   -- use 'akinsho/bufferline.nvim'
 
   -- staline
-  use {
-    'tamton-aquib/staline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    event = "BufRead",
-    config = "require('user.staline-config')"
-  }
+  -- use {
+  --   'tamton-aquib/staline.nvim',
+  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  --   event = "BufRead",
+  --   config = "require('user.staline-config')"
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

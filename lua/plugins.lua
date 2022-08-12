@@ -86,7 +86,14 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- telescope
-  use "nvim-telescope/telescope.nvim"
+  -- use "nvim-telescope/telescope.nvim"
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+    config = function()
+      require("telescope").load_extension("lazygit")
+    end,
+  })
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'fannheyward/telescope-coc.nvim'
 
@@ -128,6 +135,12 @@ return packer.startup(function(use)
 
   -- buffer
   use 'akinsho/bufferline.nvim'
+
+  -- terminal
+  use "akinsho/toggleterm.nvim"
+
+  -- lazygit
+  use 'kdheepak/lazygit.nvim'
 
   -- staline
   -- use {

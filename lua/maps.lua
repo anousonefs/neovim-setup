@@ -85,7 +85,7 @@ keymap("n", ";c", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>c", "<cmd>Telescope commands<cr>", opts)
 
 -- nvim tree
-keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<C-t>", ":NvimTreeToggle<cr>", opts)
 
 -- formating
 keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting()<cr>", opts)
@@ -124,3 +124,6 @@ vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua require('harpoon.ui').nav_fi
 vim.api.nvim_set_keymap("n", "<leader>u", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>i", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
+
+-- lf
+vim.keymap.set("n", "<C-e>", ":Lf<CR>")

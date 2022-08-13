@@ -137,28 +137,8 @@ return packer.startup(function(use)
   use 'akinsho/bufferline.nvim'
 
   -- lf
-  --[[ use 'ptzz/lf.vim' ]]
-  --[[ use 'voldikss/vim-floaterm' ]]
-  --
-  -- Sample configuration is supplied
-  use(
-    {
-      "lmburns/lf.nvim",
-      config = function()
-        -- This feature will not work if the plugin is lazy-loaded
-        vim.g.lf_netrw = 1
-        require("lf").setup(
-          {
-            escape_quit = false,
-            border = "rounded",
-            --[[ highlights = {floatborder = {guifg = require("kimbox.palette").colors.magenta}} ]]
-          }
-        )
-        vim.keymap.set("n", "<C-o>", ":Lf<CR>")
-      end,
-      requires = { "plenary.nvim", "toggleterm.nvim" }
-    }
-  )
+  use 'ptzz/lf.vim'
+  use 'voldikss/vim-floaterm'
 
   -- terminal
   use "akinsho/toggleterm.nvim"

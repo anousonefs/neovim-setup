@@ -21,7 +21,6 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
-  -- auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -53,7 +52,6 @@ nvim_tree.setup {
     height = 30,
     hide_root_folder = false,
     side = "left",
-    -- auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
@@ -62,8 +60,8 @@ nvim_tree.setup {
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
-    number = false,
-    relativenumber = false,
+    number = true,
+    relativenumber = true,
   },
   renderer = {
     icons = {
@@ -102,12 +100,20 @@ nvim_tree.setup {
         },
       },
     },
-    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "docker-compose.yml", "Dockerfile", "main.go" },
     symlink_destination = true,
   },
   filters = {
     dotfiles = true,
     custom = {},
     exclude = {},
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    },
+    remove_file = {
+      close_window = false,
+    }
   },
 }

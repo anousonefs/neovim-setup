@@ -126,7 +126,7 @@ vim.api.nvim_set_keymap("n", "<leader>i", "<cmd>lua require('harpoon.ui').nav_fi
 vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 
 -- lf
-vim.keymap.set("n", "<C-e>", ":Lf<CR>")
+keymap("n", "<C-e>", ":Lf<CR>", term_opts)
 vim.cmd "let g:lf_replace_netrw = 1"
 vim.cmd "let g:lf_width = 0.9"
 vim.cmd "let g:lf_height = 0.9"

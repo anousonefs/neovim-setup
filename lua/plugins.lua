@@ -122,8 +122,14 @@ return packer.startup(function(use)
   -- git
   use "lewis6991/gitsigns.nvim"
 
-  -- nvim tree
-  use 'kyazdani42/nvim-tree.lua'
+  -- file explorer
+  --[[ use { ]]
+  --[[   'kyazdani42/nvim-tree.lua', ]]
+  --[[   requires = { ]]
+  --[[     'kyazdani42/nvim-web-devicons', -- optional, for file icons ]]
+  --[[   }, ]]
+  --[[   tag = 'nightly' -- optional, updated every week. (see issue #1193) ]]
+  --[[ } ]]
 
   -- tagbar
   use("preservim/tagbar")
@@ -146,6 +152,7 @@ return packer.startup(function(use)
   -- lazygit
   use 'kdheepak/lazygit.nvim'
 
+  -- dashboard
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },

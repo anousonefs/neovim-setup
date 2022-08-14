@@ -3,7 +3,6 @@ if (not status) then
   print("import lualine failed")
   return
 end
-print("hihi")
 
 lualine.setup {
   options = {

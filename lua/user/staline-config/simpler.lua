@@ -29,5 +29,5 @@ require "staline".setup {
   },
   lsp_symbols = { Error = " ", Info = " ", Warn = " ", Hint = "" }
 }
-vim.cmd [[hi StalineBranch guifg=#C4A7E7]]
-vim.cmd [[hi StalineName guifg=#EBBCBA]]
+vim.cmd [[hi StalineBranch fg=#C4A7E7]]
+vim.cmd [[hi StalineName fg=#EBBCBA]]

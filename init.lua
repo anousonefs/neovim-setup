@@ -11,7 +11,8 @@ require("user.treesitter")
 require("user.autopairs")
 require("user.comment")
 require("user.gitsigns")
---[[ require("user.nvim-tree") ]]
+--[[ require("user.nvim-tree-simple") ]]
+require("user.nvim-tree-old")
 require("user.lualine")
 require("user.bufferline")
 require("user.toggleterm")

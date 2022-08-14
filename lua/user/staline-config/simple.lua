@@ -16,29 +16,29 @@ end
 local time = function()
   return os.date("%a │ %H:%M %x")
 end
-local my_colors = {n = "#9CCFD8", i = "#3E8FB0", c = "#286983", v = "#56959F"}
+local my_colors = { n = "#9CCFD8", i = "#3E8FB0", c = "#286983", v = "#56959F" }
 staline.setup {
   sections = {
     left = {
-      'mode', ' ', {'StalineBranch', 'branch'}
+      'mode', ' ', { 'StalineBranch', 'branch' }
       -- branch,
     },
-    mid = {{'StalineName', 'file_name'}},
-    right = {'-lsp', ' ', time, '  ', percentage}
+    mid = { { 'StalineName', 'file_name' } },
+    right = { '-lsp', ' ', time, '  ', percentage }
   },
- --  sections = {
-	-- 	left = {
-	-- 		'▊', ' ', { 'Evil', ' ' }, ' ',         -- The mode and evil sign
-	-- 		'file_size', ' ',                        -- Filesize
-	-- 		{ 'StalineFile', 'file_name' }, ' '       -- Filename in different highlight
-	-- 	},
-	-- 	mid = { ' ', 'lsp_name' },                      -- "lsp_name" is still a little buggy
-	-- 	right = {
-	-- 		{ 'StalineEnc', vim.bo.fileencoding:upper() }, '  ',  -- Example for custom section
-	-- 		{ 'StalineEnc', 'cool_symbol' }, ' ',                 -- the cool_symbol for your OS
-	-- 		{ 'StalineGit', 'branch' }, ' ', '▊'                  -- Branch Name in different highlight
-	-- 	}
-	-- },
+  --  sections = {
+  -- 	left = {
+  -- 		'▊', ' ', { 'Evil', ' ' }, ' ',         -- The mode and evil sign
+  -- 		'file_size', ' ',                        -- Filesize
+  -- 		{ 'StalineFile', 'file_name' }, ' '       -- Filename in different highlight
+  -- 	},
+  -- 	mid = { ' ', 'lsp_name' },                      -- "lsp_name" is still a little buggy
+  -- 	right = {
+  -- 		{ 'StalineEnc', vim.bo.fileencoding:upper() }, '  ',  -- Example for custom section
+  -- 		{ 'StalineEnc', 'cool_symbol' }, ' ',                 -- the cool_symbol for your OS
+  -- 		{ 'StalineGit', 'branch' }, ' ', '▊'                  -- Branch Name in different highlight
+  -- 	}
+  -- },
   defaults = {
     true_colors = true, -- LSP highlighing
     font_active = "none",
@@ -69,11 +69,11 @@ staline.setup {
   },
   mode_colors = my_colors, -- Change mode colors
   special_table = {
-    NvimTree = {'File Explorer', ' '},
-    packer = {'Packer', ' '},
-    TelescopePrompt = {'Telescope', ' '}
+    NvimTree = { 'File Explorer', ' ' },
+    packer = { 'Packer', ' ' },
+    TelescopePrompt = { 'Telescope', ' ' }
   },
-  lsp_symbols = {Error = " ", Info = " ", Warn = " ", Hint = " "}
+  lsp_symbols = { Error = " ", Info = " ", Warn = " ", Hint = " " }
 }
-vim.cmd [[hi StalineBranch guifg=#C4A7E7]]
-vim.cmd [[hi StalineName guifg=#EBBCBA]]
+vim.cmd [[hi StalineBranch fg=#C4A7E7]]
+vim.cmd [[hi StalineName fg=#EBBCBA]]

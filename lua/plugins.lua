@@ -123,13 +123,13 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- file explorer
-  --[[ use { ]]
-  --[[   'kyazdani42/nvim-tree.lua', ]]
-  --[[   requires = { ]]
-  --[[     'kyazdani42/nvim-web-devicons', -- optional, for file icons ]]
-  --[[   }, ]]
-  --[[   tag = 'nightly' -- optional, updated every week. (see issue #1193) ]]
-  --[[ } ]]
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
   -- tagbar
   use("preservim/tagbar")

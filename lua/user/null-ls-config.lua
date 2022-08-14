@@ -18,7 +18,7 @@ null_ls.setup({
     -- formatting.gofumpt, -- format go
     -- diagnostics.revive, -- validate go
     diagnostics.flake8, -- validate python
-    diagnostics.eslintr, -- validate typescript
+    --[[ diagnostics.eslintr, -- validate typescript ]]
     -- formatting.eslint, -- format typescript
   },
 })

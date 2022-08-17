@@ -130,3 +130,6 @@ keymap("n", "<C-e>", ":Lf<CR>", term_opts)
 vim.cmd "let g:lf_replace_netrw = 1"
 vim.cmd "let g:lf_width = 0.9"
 vim.cmd "let g:lf_height = 0.9"
+
+-- lazygit
+keymap("n", "<C-g>", "<cmd>LazyGit<cr>", term_opts)

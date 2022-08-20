@@ -169,6 +169,11 @@ return packer.startup(function(use)
   --   config = "require('user.staline-config')"
   -- }
 
+  use {
+    'kdheepak/tabline.nvim',
+    requires = { { 'hoob3rt/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

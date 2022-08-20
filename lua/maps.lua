@@ -36,15 +36,15 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- original buffers
--- keymap("n", "<C-l>", ":bnext<CR>", opts)
--- keymap("n", "<C-h>", ":bprevious<CR>", opts)
+keymap("n", "<C-l>", ":bnext<CR>", opts)
+keymap("n", "<C-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-w>", ":bdelete<cr>", opts)
 keymap("i", "<C-w>", ":bdelete<cr>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
 
 -- BufferLine
-keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts)
+--[[ keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts) ]]
+--[[ keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts) ]]
 keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
 keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts)
 keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
@@ -85,7 +85,7 @@ keymap("n", ";c", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>c", "<cmd>Telescope commands<cr>", opts)
 
 -- nvim tree
-keymap("n", "<C-t>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
 
 -- formating
 keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting()<cr>", opts)
@@ -126,7 +126,7 @@ vim.api.nvim_set_keymap("n", "<leader>i", "<cmd>lua require('harpoon.ui').nav_fi
 vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 
 -- lf
-keymap("n", "<C-e>", ":Lf<CR>", term_opts)
+keymap("n", "<C-t>", ":Lf<CR>", term_opts)
 vim.cmd "let g:lf_replace_netrw = 1"
 vim.cmd "let g:lf_width = 0.9"
 vim.cmd "let g:lf_height = 0.9"

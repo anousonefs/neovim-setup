@@ -15,14 +15,14 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = false,
+  open_on_setup = true,
   ignore_ft_on_setup = {
     "startify",
     "dashboard",
     "alpha",
   },
-  open_on_tab = false,
-  hijack_cursor = false,
+  open_on_tab = true,
+  hijack_cursor = true,
   update_cwd = false,
   -- update_to_buf_dir = {
   --   enable = true,
@@ -48,7 +48,7 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 27,
     height = 30,
     hide_root_folder = false,
     side = "left",
@@ -60,8 +60,8 @@ nvim_tree.setup {
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
-    number = true,
-    relativenumber = true,
+    number = false,
+    relativenumber = false,
   },
   renderer = {
     icons = {
@@ -104,13 +104,13 @@ nvim_tree.setup {
     symlink_destination = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
     custom = {},
     exclude = {},
   },
   actions = {
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
     },
     remove_file = {
       close_window = false,

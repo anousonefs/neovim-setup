@@ -1,7 +1,7 @@
 local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-  cmdheight = 2, -- more space in the neovim command line for displaying messages
+  cmdheight = 1, -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
@@ -34,6 +34,7 @@ local options = {
   sidescrolloff = 8,
   termguicolors = true, -- set term gui colors (most terminals support this)
   guifont = "FiraCode Nerd Font:h12", -- the font used in graphical neovim applications
+  shell = "/usr/local/bin/fish",
 }
 
 vim.opt.shortmess:append "c"

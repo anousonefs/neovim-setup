@@ -43,8 +43,8 @@ keymap("i", ";w", ":bdelete<cr>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
 
 -- tabline
-keymap("n", "<C-l>", ":TablineBufferNext<CR>", opts)
-keymap("n", "<C-h>", ":TablineBufferPrevious<CR>", opts)
+--[[ keymap("n", "<C-l>", ":TablineBufferNext<CR>", opts) ]]
+--[[ keymap("n", "<C-h>", ":TablineBufferPrevious<CR>", opts) ]]
 keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
 keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts)
 keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
@@ -56,8 +56,8 @@ keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
 
 -- BufferLine
---[[ keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts) ]]
---[[ keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts) ]]
+keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts)
 --[[ keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts) ]]
 --[[ keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts) ]]
 --[[ keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts) ]]

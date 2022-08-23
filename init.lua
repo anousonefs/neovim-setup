@@ -14,6 +14,6 @@ require("user.gitsigns")
 --[[ require("user.nvim-tree-simple") ]]
 require("user.nvim-tree-old")
 require("user.lualine")
---[[ require("user.bufferline") ]]
+require("user.bufferline")
 require("user.toggleterm")
-require("user.tabline")
+--[[ require("user.tabline") ]]

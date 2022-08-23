@@ -36,15 +36,15 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- original buffers
-keymap("n", "<C-l>", ":bnext<CR>", opts)
-keymap("n", "<C-h>", ":bprevious<CR>", opts)
-keymap("n", "<C-w>", ":bdelete<cr>", opts)
-keymap("i", "<C-w>", ":bdelete<cr>", opts)
+--[[ keymap("n", "<C-l>", ":bnext<CR>", opts) ]]
+--[[ keymap("n", "<C-h>", ":bprevious<CR>", opts) ]]
+keymap("n", ";w", ":bdelete<cr>", opts)
+keymap("i", ";w", ":bdelete<cr>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
 
--- BufferLine
---[[ keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts) ]]
---[[ keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts) ]]
+-- tabline
+keymap("n", "<C-l>", ":TablineBufferNext<CR>", opts)
+keymap("n", "<C-h>", ":TablineBufferPrevious<CR>", opts)
 keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
 keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts)
 keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
@@ -54,6 +54,19 @@ keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>", opts)
 keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>", opts)
 keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
+
+-- BufferLine
+--[[ keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts) ]]
+--[[ keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts) ]]
+--[[ keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts) ]]
+--[[ keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts) ]]
+--[[ keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts) ]]
+--[[ keymap("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>", opts) ]]
+--[[ keymap("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>", opts) ]]
+--[[ keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>", opts) ]]
+--[[ keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>", opts) ]]
+--[[ keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>", opts) ]]
+--[[ keymap("n", "<leader>9", "<cmd>blast<CR>", opts) ]]
 keymap("n", "<S-p>", ":BufferLineTogglePin<cr>", opts)
 
 keymap("i", "kj", "<ESC>", opts)

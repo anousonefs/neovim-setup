@@ -17,12 +17,6 @@ keymap('n', '-', '<C-x>', term_opts)
 keymap('n', ';s', ':split<Return><C-w>w', opts)
 keymap('n', ';v', ':vsplit<Return><C-w>w', opts)
 
--- Better window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
-
 keymap("n", ";h", "<C-w>h", opts)
 keymap("n", ";j", "<C-w>j", opts)
 keymap("n", ";k", "<C-w>k", opts)
@@ -38,14 +32,14 @@ keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 -- original buffers
 --[[ keymap("n", "<C-l>", ":bnext<CR>", opts) ]]
 --[[ keymap("n", "<C-h>", ":bprevious<CR>", opts) ]]
-keymap("n", ";w", ":bdelete<cr>", opts)
-keymap("i", ";w", ":bdelete<cr>", opts)
+keymap("n", ";w", ":BufferLineCloseRight<cr>", opts)
+keymap("i", ";w", ":BufferLineCloseRight<cr>", opts)
 keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
 
 -- tabline
 --[[ keymap("n", "<C-l>", ":TablineBufferNext<CR>", opts) ]]
 --[[ keymap("n", "<C-h>", ":TablineBufferPrevious<CR>", opts) ]]
-keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
+keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts)
 keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
 keymap("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>", opts)
@@ -53,11 +47,12 @@ keymap("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>", opts)
 keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>", opts)
 keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>", opts)
 keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>", opts)
-keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
+keymap("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
+keymap("n", "<leader>$", "<cmd>BufferLineGoToBuffer -1<CR>", opts)
 
 -- BufferLine
-keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<leader>l", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<leader>h", ":BufferLineCyclePrev<CR>", opts)
 --[[ keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts) ]]
 --[[ keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", term_opts) ]]
 --[[ keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>", opts) ]]
@@ -96,6 +91,7 @@ keymap(
 keymap("n", ";t", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", ";c", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>c", "<cmd>Telescope commands<cr>", opts)
+keymap("n", ";r", "<cmd>Telescope help_tags<cr>", opts)
 
 -- nvim tree
 keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
@@ -129,14 +125,14 @@ vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber", pat
 vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*" })
 
 -- harpoon keymap
-vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts)
+vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts)
+vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>u", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>i", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
+vim.api.nvim_set_keymap("n", ";m", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
+vim.api.nvim_set_keymap("n", ";y", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)
+vim.api.nvim_set_keymap("n", ";u", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
+vim.api.nvim_set_keymap("n", ";i", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
+vim.api.nvim_set_keymap("n", ";o", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 
 -- lf
 keymap("n", "<C-t>", ":Lf<CR>", term_opts)
@@ -146,3 +142,10 @@ vim.cmd "let g:lf_height = 0.9"
 
 -- lazygit
 keymap("n", "<C-g>", "<cmd>LazyGit<cr>", term_opts)
+
+-- vim-go
+keymap("n", "<space>gt", "<cmd>GoTestFunc<cr>", opts)
+
+vim.keymap.set("n", "<leader>mn", require("nvim-tree.api").marks.navigate.next)
+vim.keymap.set("n", "<leader>mp", require("nvim-tree.api").marks.navigate.prev)
+vim.keymap.set("n", "<leader>ms", require("nvim-tree.api").marks.navigate.select)

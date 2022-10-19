@@ -17,3 +17,4 @@ require("user.lualine")
 --[[ require("user.bufferline") ]]
 require("user.toggleterm")
 --[[ require("user.tabline") ]]
+require("user.dap-config")

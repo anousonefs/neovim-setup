@@ -44,6 +44,8 @@ nvim_lsp.gopls.setup(opts)
 -- ts
 nvim_lsp.tsserver.setup(opts)
 
+--[[ nvim_lsp.html_languageserver.setup(opts) ]]
+
 -- python
 -- nvim_lsp.pyright.setup(opts)
 

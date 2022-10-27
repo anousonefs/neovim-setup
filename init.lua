@@ -18,3 +18,5 @@ require("user.lualine")
 require("user.toggleterm")
 --[[ require("user.tabline") ]]
 require("user.dap-config")
+require("user.html")
+require("user.autotag")

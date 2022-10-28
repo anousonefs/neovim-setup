@@ -90,6 +90,9 @@ keymap("n", ";t", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", ";c", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>c", "<cmd>Telescope commands<cr>", opts)
 keymap("n", ";r", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", ";u", "<cmd>Telescope lsp_references<cr>", opts)
+keymap("n", ";e", "<cmd>Telescope diagnostics<cr>", opts)
+keymap("n", ";b", "<cmd>Telescope git_branches<cr>", opts)
 
 -- nvim tree
 keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
@@ -131,12 +134,6 @@ vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua require('harpoon.ui').nav_fi
 vim.api.nvim_set_keymap("n", "<leader>u", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>i", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
-
--- lf
---[[ keymap("n", "<C-t>", ":Lf<CR>", term_opts) ]]
---[[ vim.cmd "let g:lf_replace_netrw = 1" ]]
---[[ vim.cmd "let g:lf_width = 0.9" ]]
---[[ vim.cmd "let g:lf_height = 0.9" ]]
 
 -- lazygit
 keymap("n", "<C-g>", "<cmd>LazyGit<cr>", term_opts)

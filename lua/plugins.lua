@@ -70,7 +70,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua" -- snippets
 
   -- snippet
@@ -78,13 +77,6 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use { "williamboman/mason.nvim" } -- for install lsp plugins
-  use { "williamboman/mason-lspconfig.nvim" }
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-
-  -- null-ls
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- telescope
   -- use "nvim-telescope/telescope.nvim"
@@ -162,13 +154,20 @@ return packer.startup(function(use)
     end
   }
 
-  -- staline
-  -- use {
-  --   'tamton-aquib/staline.nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  --   event = "BufRead",
-  --   config = "require('user.staline-config')"
-  -- }
+	-- managing & installing lsp servers, linters & formatters
+	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+
+	-- configuring lsp servers
+	use("neovim/nvim-lspconfig") -- easily configure language servers
+	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+	-- formatting & linting
+	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   use {
     'kdheepak/tabline.nvim',

@@ -94,6 +94,9 @@ keymap("n", ";u", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", ";e", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", ";b", "<cmd>Telescope git_branches<cr>", opts)
 
+-- goto error
+keymap("n", "ge", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+
 -- nvim tree
 keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
 

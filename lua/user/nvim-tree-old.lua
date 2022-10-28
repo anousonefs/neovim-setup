@@ -12,6 +12,13 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- recommended settings from nvim-tree documentation
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- change color for arrows in tree to light blue
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
 nvim_tree.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = true,

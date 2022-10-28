@@ -62,6 +62,7 @@ return packer.startup(function(use)
   -- theme
   use 'folke/tokyonight.nvim'
   use 'NLKNguyen/papercolor-theme'
+  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
   -- cmp
   use "hrsh7th/nvim-cmp" -- The completion plugin

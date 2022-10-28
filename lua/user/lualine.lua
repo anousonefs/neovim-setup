@@ -1,21 +1,37 @@
 local status, lualine = pcall(require, "lualine")
+local lualine_nightfly = require("lualine.themes.nightfly")
 if (not status) then
   print("import lualine failed")
   return
 end
 
---[[ local get_path = function() ]]
---[[   return '[' .. vim.fn.expand('%:p:h') .. ']' ]]
---[[ end ]]
---[[]]
---[[ local window = function() ]]
---[[   return vim.api.nvim_win_get_number(0) ]]
---[[ end ]]
+-- new colors for theme
+local new_colors = {
+  blue = "#4e81e6",
+  green = "#2fc441",
+  violet = "#FF61EF",
+  yellow = "#cff71b",
+  black = "#000000",
+  orange = "#FFA500",
+}
+
+-- change nightlfy theme colors
+lualine_nightfly.normal.a.bg = new_colors.blue
+lualine_nightfly.insert.a.bg = new_colors.orange
+lualine_nightfly.visual.a.bg = new_colors.violet
+lualine_nightfly.command = {
+  a = {
+    gui = "bold",
+    bg = new_colors.yellow,
+    fg = new_colors.black, -- black
+  },
+}
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    --[[ theme = 'solarized_dark', ]]
+    theme = lualine_nightfly,
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {},
@@ -47,7 +63,7 @@ lualine.setup {
         --[[ section_separators = { left = '', right = '' }, ]]
         --[[ component_separators = { left = '', right = '' }, ]]
         cond = nil,
-        color = { fg = 'pink', gui = 'italic' },
+        --[[ color = { fg = 'pink', gui = 'italic' }, ]]
         type = nil,
         padding = 1,
         fmt = nil,

@@ -10,18 +10,22 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Increment/decrement
-keymap('n', '+', '<C-a>', term_opts)
-keymap('n', '-', '<C-x>', term_opts)
+keymap("n", "+", "<C-a>", term_opts)
+keymap("n", "-", "<C-x>", term_opts)
 
 -- Split window
-keymap('n', ';s', ':split<Return><C-w>w', opts)
-keymap('n', ';v', ':vsplit<Return><C-w>w', opts)
+keymap("n", ";s", ":split<Return><C-w>w", opts)
+keymap("n", ";v", ":vsplit<Return><C-w>w", opts)
 
-keymap("n", ";h", "<C-w>h", opts)
-keymap("n", ";j", "<C-w>j", opts)
-keymap("n", ";k", "<C-w>k", opts)
-keymap("n", ";l", "<C-w>l", opts)
-
+-- navigation
+--[[ keymap("n", ";h", "<C-w>h", opts) ]]
+--[[ keymap("n", ";j", "<C-w>j", opts) ]]
+--[[ keymap("n", ";k", "<C-w>k", opts) ]]
+--[[ keymap("n", ";l", "<C-w>l", opts) ]]
+keymap("n", ";l", "<cmd>TmuxNavigateRight<cr>", opts)
+keymap("n", ";h", "<cmd>TmuxNavigateLeft<cr>", opts)
+keymap("n", ";j", "<cmd>TmuxNavigateDown<cr>", opts)
+keymap("n", ";k", "<cmd>TmuxNavigateUp<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize +2<CR>", opts)
@@ -30,9 +34,9 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- original buffers
-keymap("n", "<C-l>", ":bnext<CR>", opts)
-keymap("n", "<C-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>9", "<cmd>blast<CR>", opts)
+--[[ keymap("n", "<C-l>", ":bnext<CR>", opts) ]]
+--[[ keymap("n", "<C-h>", ":bprevious<CR>", opts) ]]
+--[[ keymap("n", "<leader>9", "<cmd>blast<CR>", opts) ]]
 
 -- tabline
 --[[ keymap("n", "<C-l>", ":TablineBufferNext<CR>", opts) ]]
@@ -81,10 +85,10 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 -- keymap("n", ";f", "<cmd>Telescope find_files<cr>", opts)
 keymap(
-  "n",
-  ";f",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts
+	"n",
+	";f",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
 )
 keymap("n", ";t", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", ";c", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
@@ -119,8 +123,8 @@ keymap("n", "<Leader>v", ":edit ~/.config/nvim/init.lua<CR>", { silent = true })
 
 -- format file on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  command = "lua vim.lsp.buf.formatting_sync(nil, 1000)",
-  pattern = "*.cpp,*.css,*.go,*.h,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml",
+	command = "lua vim.lsp.buf.formatting_sync(nil, 1000)",
+	pattern = "*.cpp,*.css,*.go,*.h,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml",
 })
 
 -- set line number
@@ -129,8 +133,8 @@ vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber", pat
 vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*" })
 
 -- harpoon keymap
-vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts)
-vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts)
+--[[ vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts) ]]
+--[[ vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts) ]]
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)

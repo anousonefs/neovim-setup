@@ -127,8 +127,9 @@ return packer.startup(function(use)
   -- tagbar
   use("preservim/tagbar")
 
-  -- harpoon for navigation
-  use 'ThePrimeagen/harpoon'
+  use 'ThePrimeagen/harpoon' -- harpoon for navigation
+
+  use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
 

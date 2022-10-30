@@ -8,8 +8,6 @@ alias gg 'lazygit'
 alias n 'nvim'
 
 bind \cf 'forward-char'
-# bind \ct fzf_file
-# bind \cr fzf_command_history
 set -U FZF_CTRL_R_OPTS "--reverse"
 set -U FZF_TMUX_OPTS "-p"
 
@@ -18,9 +16,3 @@ set -U FZF_TMUX_OPTS "-p"
 starship init fish | source
 fish_add_path $HOME/.config/bin
 
-# git
-
-if status is-interactive && test -f ~/.config/fish/custom/git_fzf.fish
-	source ~/.config/fish/custom/git_fzf.fish
-	git_fzf_key_bindings
-end

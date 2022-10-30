@@ -22,6 +22,7 @@ keymap("n", ";v", ":vsplit<Return><C-w>w", opts)
 --[[ keymap("n", ";j", "<C-w>j", opts) ]]
 --[[ keymap("n", ";k", "<C-w>k", opts) ]]
 --[[ keymap("n", ";l", "<C-w>l", opts) ]]
+vim.cmd("let g:tmux_navigator_no_mappings = 1")
 keymap("n", ";l", "<cmd>TmuxNavigateRight<cr>", opts)
 keymap("n", ";h", "<cmd>TmuxNavigateLeft<cr>", opts)
 keymap("n", ";j", "<cmd>TmuxNavigateDown<cr>", opts)
@@ -83,7 +84,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
--- keymap("n", ";f", "<cmd>Telescope find_files<cr>", opts)
 keymap(
 	"n",
 	";f",

@@ -87,9 +87,16 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap(
 	"n",
 	";f",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true, no_ignore = true }))<cr>",
 	opts
 )
+--[[ vim.api.nvim_set_keymap( ]]
+--[[ 	"n", ]]
+--[[ 	";f", ]]
+--[[ 	'<cmd> lua require"telescope.builtin".find_files({ hidden = true })<CR>', ]]
+--[[ 	{ noremap = true, silent = true } ]]
+--[[ ) ]]
+
 keymap("n", ";t", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", ";c", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>c", "<cmd>Telescope commands<cr>", opts)

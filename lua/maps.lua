@@ -4,6 +4,10 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
+-- C-d, C-u
+keymap("n", "<C-d>", "<C-d>zz", term_opts)
+keymap("n", "<C-u>", "<C-u>zz", term_opts)
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "

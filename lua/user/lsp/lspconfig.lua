@@ -46,10 +46,14 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
 		client.resolved_capabilities.document_formatting = false
 	end
+	--[[ vim.notify(client.name) ]]
 	if client.name == "sumneko_lua" then
 		client.resolved_capabilities.document_formatting = false
 	end
 	if client.name == "html" then
+		client.resolved_capabilities.document_formatting = false
+	end
+	if client.name == "omnisharp" then
 		client.resolved_capabilities.document_formatting = false
 	end
 end
@@ -99,6 +103,12 @@ lspconfig["gopls"].setup({
 
 -- configure svelte server
 lspconfig["svelte"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure svelte server
+lspconfig["omnisharp"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })

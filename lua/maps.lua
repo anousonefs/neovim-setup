@@ -8,6 +8,10 @@ local keymap = vim.api.nvim_set_keymap
 keymap("n", "<C-d>", "<C-d>zz", term_opts)
 keymap("n", "<C-u>", "<C-u>zz", term_opts)
 
+-- n
+keymap("n", "n", "nzzzv", term_opts)
+keymap("n", "N", "Nzzzv", term_opts)
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -135,7 +139,7 @@ keymap("n", "<Leader>v", ":edit ~/.config/nvim/init.lua<CR>", { silent = true })
 -- format file on save
 vim.api.nvim_create_autocmd("BufWritePre", {
 	command = "lua vim.lsp.buf.formatting_sync(nil, 1000)",
-	pattern = "*.cpp,*.css,*.go,*.h,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml",
+	pattern = "*.cpp,*.css,*.go,*.h,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml,*.cs",
 })
 
 -- set line number

@@ -44,17 +44,21 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
 		keymap.set("n", "<leader>ai", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
-		client.resolved_capabilities.document_formatting = false
+		--[[ client.resolved_capabilities.document_formatting = false ]]
+		client.server_capabilities.documentFormattingProvider = false
 	end
 	--[[ vim.notify(client.name) ]]
 	if client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
+		--[[ client.resolved_capabilities.document_formatting = false ]]
+		client.server_capabilities.documentFormattingProvider = false
 	end
 	if client.name == "html" then
-		client.resolved_capabilities.document_formatting = false
+		--[[ client.resolved_capabilities.document_formatting = false ]]
+		client.server_capabilities.documentFormattingProvider = false
 	end
 	if client.name == "omnisharp" then
-		client.resolved_capabilities.document_formatting = false
+		--[[ client.resolved_capabilities.document_formatting = false ]]
+		client.server_capabilities.documentFormattingProvider = false
 	end
 end
 

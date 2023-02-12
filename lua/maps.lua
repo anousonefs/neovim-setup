@@ -133,6 +133,26 @@ vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>lua require('dap').step_over()<c
 vim.api.nvim_set_keymap("n", "<leader>i", "<cmd>lua require('dap').step_into()<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua require('dap').step_out()<cr>", opts)
 
+-- transparent
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		local highlights = {
+			"Normal",
+			"LineNr",
+			"Folded",
+			"NonText",
+			"SpecialKey",
+			"VertSplit",
+			"SignColumn",
+			"EndOfBuffer",
+			"TablineFill", -- this is specific to how I like my tabline to look like
+		}
+		for _, name in pairs(highlights) do
+			vim.cmd.highlight(name .. " guibg=none ctermbg=none")
+		end
+	end,
+})
+
 -- original buffers
 --[[ keymap("n", "<C-l>", ":bnext<CR>", opts) ]]
 --[[ keymap("n", "<C-h>", ":bprevious<CR>", opts) ]]

@@ -19,8 +19,9 @@ vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber", pat
 vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*" })
 
 -- format file on save
+--[[ command = "lua vim.lsp.buf.formatting_sync(nil, 1000)", ]]
 vim.api.nvim_create_autocmd("BufWritePre", {
-	command = "lua vim.lsp.buf.formatting_sync(nil, 1000)",
+	command = "lua vim.lsp.buf.format()",
 	pattern = "*.cpp,*.css,*.go,*.h,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml,*.cs",
 })
 

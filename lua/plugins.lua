@@ -182,7 +182,25 @@ return packer.startup(function(use)
 	})
 
 	--[[ use("github/copilot.vim") ]]
-	use("Exafunction/codeium.vim")
+	--[[ use("Exafunction/codeium.vim") ]]
+	use({
+		"Exafunction/codeium.vim",
+		config = function()
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set("i", "<leader>g", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<leader>]", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true })
+			vim.keymap.set("i", "<leader>[", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true })
+			vim.keymap.set("i", "<leader>x", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+		end,
+	})
 
 	use("fatih/vim-go")
 

@@ -56,14 +56,14 @@ return packer.startup(function(use)
 	use({ "tpope/vim-dispatch", opt = true, cmd = { "Dispatch", "Make", "Focus", "Start" } })
 
 	-- markdown preview
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	})
+	--[[ use({ ]]
+	--[[ 	"iamcco/markdown-preview.nvim", ]]
+	--[[ 	run = "cd app && npm install", ]]
+	--[[ 	setup = function() ]]
+	--[[ 		vim.g.mkdp_filetypes = { "markdown" } ]]
+	--[[ 	end, ]]
+	--[[ 	ft = { "markdown" }, ]]
+	--[[ }) ]]
 
 	-- theme
 	use("folke/tokyonight.nvim")

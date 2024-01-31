@@ -167,6 +167,8 @@ return packer.startup(function(use)
 			"rust-analyzer",
 		},
 	} }) -- in charge of managing lsp servers, linters & formatters
+	use({ "saecki/crates.nvim", ft = { "rust", "toml" } })
+
 	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
 	-- configuring lsp servers

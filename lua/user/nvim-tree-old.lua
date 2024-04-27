@@ -4,13 +4,12 @@ if not status_ok then
 	return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	print("import nvim-tree.config failed")
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
+--[[ local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config") ]]
+--[[ if not config_status_ok then ]]
+--[[ 	print("import nvim-tree.config failed") ]]
+--[[ 	return ]]
+--[[ end ]]
+--[[ local tree_cb = nvim_tree_config.nvim_tree_callback ]]
 
 -- recommended settings from nvim-tree documentation
 vim.g.loaded = 1
@@ -22,16 +21,16 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 nvim_tree.setup({
 	auto_reload_on_write = true,
 	--[[ create_in_closed_folder = true, ]]
-	ignore_buffer_on_setup = true,
+	--[[ ignore_buffer_on_setup = true, ]]
 	disable_netrw = false,
 	hijack_netrw = true,
 	hijack_cursor = true,
-	open_on_setup = false,
-	open_on_setup_file = false,
+	--[[ open_on_setup = false, ]]
+	--[[ open_on_setup_file = false, ]]
 	hijack_unnamed_buffer_when_opening = true,
 	open_on_tab = true,
 	root_dirs = {},
-	ignore_buf_on_tab_change = {},
+	--[[ ignore_buf_on_tab_change = {}, ]]
 	--[[ sort_by = "modification_time", ]]
 	sort_by = "name",
 	prefer_startup_root = true,
@@ -39,12 +38,12 @@ nvim_tree.setup({
 	reload_on_bufenter = true,
 	respect_buf_cwd = true,
 	on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
-	remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs)
-	ignore_ft_on_setup = {
-		"startify",
-		"dashboard",
-		"alpha",
-	},
+	--[[ remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs) ]]
+	--[[ ignore_ft_on_setup = { ]]
+	--[[ 	"startify", ]]
+	--[[ 	"dashboard", ]]
+	--[[ 	"alpha", ]]
+	--[[ }, ]]
 	update_cwd = false,
 	-- update_to_buf_dir = {
 	--   enable = true,
@@ -72,18 +71,18 @@ nvim_tree.setup({
 		centralize_selection = true,
 		width = 27,
 		--[[ height = 30, ]]
-		hide_root_folder = false,
+		--[[ hide_root_folder = false, ]]
 		side = "left",
 		preserve_window_proportions = true,
 		signcolumn = "yes",
-		mappings = {
-			custom_only = false,
-			list = {
-				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "v", cb = tree_cb("vsplit") },
-			},
-		},
+		--[[ mappings = { ]]
+		--[[ 	custom_only = false, ]]
+		--[[ list = { ]]
+		--[[ 	{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") }, ]]
+		--[[ 	{ key = "h", cb = tree_cb("close_node") }, ]]
+		--[[ 	{ key = "v", cb = tree_cb("vsplit") }, ]]
+		--[[ }, ]]
+		--[[ }, ]]
 		number = true,
 		relativenumber = true,
 	},

@@ -4,12 +4,9 @@ if not status_ok then
 	return
 end
 
---[[ local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config") ]]
---[[ if not config_status_ok then ]]
---[[ 	print("import nvim-tree.config failed") ]]
---[[ 	return ]]
---[[ end ]]
---[[ local tree_cb = nvim_tree_config.nvim_tree_callback ]]
+local function go_to_prev_window()
+	vim.cmd("wincmd p")
+end
 
 -- recommended settings from nvim-tree documentation
 vim.g.loaded = 1
@@ -17,6 +14,22 @@ vim.g.loaded_netrwPlugin = 1
 
 -- change color for arrows in tree to light blue
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
+local function my_on_attach(bufnr)
+	local api = require("nvim-tree.api")
+
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	-- default mappings
+	api.config.mappings.default_on_attach(bufnr)
+
+	-- custom mappings
+	vim.keymap.set("n", "<C-t>", api.tree.change_root_to_parent, opts("Up"))
+	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
+	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+end
 
 nvim_tree.setup({
 	auto_reload_on_write = true,
@@ -37,13 +50,15 @@ nvim_tree.setup({
 	sync_root_with_cwd = true,
 	reload_on_bufenter = true,
 	respect_buf_cwd = true,
-	on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
+	on_attach = my_on_attach,
+	--[[ on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy ]]
 	--[[ remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs) ]]
 	--[[ ignore_ft_on_setup = { ]]
 	--[[ 	"startify", ]]
 	--[[ 	"dashboard", ]]
 	--[[ 	"alpha", ]]
 	--[[ }, ]]
+
 	update_cwd = false,
 	-- update_to_buf_dir = {
 	--   enable = true,
@@ -75,14 +90,6 @@ nvim_tree.setup({
 		side = "left",
 		preserve_window_proportions = true,
 		signcolumn = "yes",
-		--[[ mappings = { ]]
-		--[[ 	custom_only = false, ]]
-		--[[ list = { ]]
-		--[[ 	{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") }, ]]
-		--[[ 	{ key = "h", cb = tree_cb("close_node") }, ]]
-		--[[ 	{ key = "v", cb = tree_cb("vsplit") }, ]]
-		--[[ }, ]]
-		--[[ }, ]]
 		number = true,
 		relativenumber = true,
 	},

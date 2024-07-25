@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*"
 --[[ command = "lua vim.lsp.buf.formatting_sync(nil, 1000)", ]]
 vim.api.nvim_create_autocmd("BufWritePre", {
 	command = "lua vim.lsp.buf.format()",
-	pattern = "*.cpp,*.css,*.go,*.h,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml,*.cs,*.svelte",
+	pattern = "*.cpp,*.css,*.go,*.h,*.js,*.json,*.jsx,*.lua,*.md,*.py,*.rs,*.ts,*.tsx,*.yaml,*.cs,*.svelte",
 })
 
 -- harpoon keymap

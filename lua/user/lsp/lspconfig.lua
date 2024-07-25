@@ -1,4 +1,6 @@
 -- import lspconfig plugin safely
+vim.filetype.add({ extension = { templ = "templ" } })
+
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
 	return
@@ -77,6 +79,7 @@ end
 lspconfig["html"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "templ", "html" },
 })
 
 -- configure typescript server with plugin
@@ -97,10 +100,23 @@ lspconfig["cssls"].setup({
 lspconfig["tailwindcss"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+	settings = {
+		tailwindCSS = {
+			includeLanguages = {
+				templ = "html",
+			},
+		},
+	},
 })
 
 -- configure gopls server
 lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig["templ"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })

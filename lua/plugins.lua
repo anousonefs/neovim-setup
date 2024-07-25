@@ -189,25 +189,28 @@ return packer.startup(function(use)
 		requires = { { "hoob3rt/lualine.nvim", opt = true }, { "kyazdani42/nvim-web-devicons", opt = true } },
 	})
 
-	--[[ use("github/copilot.vim") ]]
-	use({
-		"Exafunction/codeium.vim",
-		config = function()
-			-- Change '<C-g>' here to any keycode you like.
-			vim.keymap.set("i", "<leader>g", function()
-				return vim.fn["codeium#Accept"]()
-			end, { expr = true })
-			vim.keymap.set("i", "<leader>]", function()
-				return vim.fn["codeium#CycleCompletions"](1)
-			end, { expr = true })
-			vim.keymap.set("i", "<leader>[", function()
-				return vim.fn["codeium#CycleCompletions"](-1)
-			end, { expr = true })
-			vim.keymap.set("i", "<leader>x", function()
-				return vim.fn["codeium#Clear"]()
-			end, { expr = true })
-		end,
-	})
+	--[[ use({ ]]
+	--[[ 	"Exafunction/codeium.vim", ]]
+	--[[ 	config = function() ]]
+	--[[ 		-- Change '<C-g>' here to any keycode you like. ]]
+	--[[ 		vim.keymap.set("i", "<leader>g", function() ]]
+	--[[ 			return vim.fn["codeium#Accept"]() ]]
+	--[[ 		end, { expr = true }) ]]
+	--[[ 		vim.keymap.set("i", "<leader>]", function() ]]
+	--[[ 			return vim.fn["codeium#CycleCompletions"](1) ]]
+	--[[ 		end, { expr = true }) ]]
+	--[[ 		vim.keymap.set("i", "<leader>[", function() ]]
+	--[[ 			return vim.fn["codeium#CycleCompletions"](-1) ]]
+	--[[ 		end, { expr = true }) ]]
+	--[[ 		vim.keymap.set("i", "<leader>x", function() ]]
+	--[[ 			return vim.fn["codeium#Clear"]() ]]
+	--[[ 		end, { expr = true }) ]]
+	--[[ 	end, ]]
+	--[[ }) ]]
+
+	--[[ use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" }) ]]
+
+	--[[ use("madox2/vim-ai") ]]
 
 	use("fatih/vim-go")
 

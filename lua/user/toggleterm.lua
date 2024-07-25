@@ -15,8 +15,10 @@ toggleterm.setup({
 	insert_mappings = true,
 	persist_size = true,
 	direction = "float",
-	close_on_exit = true,
+	close_on_exit = false,
 	shell = vim.o.shell,
+	--[[ shell = "/opt/homebrew/bin/fish", ]]
+	--[[ shell = "/bin/zsh", ]]
 	float_opts = {
 		border = "curved",
 		winblend = 0,

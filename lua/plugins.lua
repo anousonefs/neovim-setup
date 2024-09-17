@@ -212,6 +212,21 @@ return packer.startup(function(use)
 
 	--[[ use("madox2/vim-ai") ]]
 
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup({
+				api_key_cmd = "",
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"folke/trouble.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+
 	use("fatih/vim-go")
 
 	use({
@@ -231,6 +246,15 @@ return packer.startup(function(use)
 	use("ThePrimeagen/vim-be-good")
 
 	use("leafOfTree/vim-svelte-plugin")
+
+	use({
+		"cuducos/yaml.nvim",
+		ft = { "yaml" }, -- optional
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
